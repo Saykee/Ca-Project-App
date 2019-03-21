@@ -1,13 +1,15 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>CAProjectApp</title>
-  <base href="/">
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
+<script>
+  function myFunction() {
+    var x = "User-agent header sent: " + navigator.userAgent;
+    document.getElementById("demo").innerHTML = x;
+  }
+  </script>
 <body>
   <app-root></app-root>
 </body>
