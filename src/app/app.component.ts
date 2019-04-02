@@ -12,16 +12,8 @@ export class AppComponent {
   pwnedData: IHibpresponse;
   errorMessage: any;
 
-  constructor(private _hipbService: HibpApiService) {
+  constructor() {
   
-  }
-
-  getPwnedData(emailName: string): boolean {
-    this._hipbService.getPwnedData(emailName).subscribe(pwnedData => {
-      this.pwnedData = pwnedData;
-    },
-    error => this.errorMessage = <any>error);
-    return false;
   }
 
 }

@@ -1,0 +1,19 @@
+<div class="header">
+    <h1>
+      Have You Been Pwned?
+    </h1>
+    </div>
+    
+    <form class="form">
+      <div class="input1">
+        <input class="inputBox" type="text" name="email-name" placeholder="Enter Your E-Mail Address" #emailName/>
+      </div>
+      <button class="button" (click)="getPwnedData(emailName.value)">Submit</button>
+    </form>
+<div *ngIf="pwnedData">
+  <div *ngFor="let pdata of pwnedData">
+  <h1>{{pdata.Name}}</h1>
+  <img src="{{pdata.LogoPath}}" class="logoClass">
+  <h2>{{pdata.Title}}: {{pdata.Description | specialPipe}}</h2>
+</div>
+</div>
