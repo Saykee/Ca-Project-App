@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class specialPipe implements PipeTransform {
 
   transform(value: string): string {
-    let newVal = value.replace(/<a [^>]+>([^<]+)<\/a>/gi, '').toLocaleLowerCase();
+    let newVal = value.replace(/(<\/?(?:a)[^>]*>)|<[^>]+>/ig, '').toLocaleLowerCase();
     return this.titleCase(newVal);
   }
   titleCase(str) {

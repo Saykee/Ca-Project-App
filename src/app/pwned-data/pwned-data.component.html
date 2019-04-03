@@ -2,20 +2,52 @@
       <div class="section">
             <label class="label">Enter Your Email</label>
         <input class="input is-rounded" type="text" name="email-name" placeholder="Enter Your E-Mail Address" #emailName/>
-      <button class="button" (click)="getPwnedData(emailName.value)">Submit</button>
+        <div class="section">
+            <button class="button" (click)="getPwnedData(emailName.value)">Submit</button>
+        </div>
   </div>
     </form>
+
 <div *ngIf="pwnedData">
-  <div *ngFor="let pdata of pwnedData">
-    <div class="section">
-    <div class="columns">
-      <div class="column is-one-fifth">
-          <img src="{{pdata.LogoPath}}" class="logoClass">
+    <div class="bckgrnd">
+      <h1 class="is-size-1 has-text-white">You Have Been Hacked!</h1>
+      <div class="section">
+          <h2><strong class="has-text-white">3 Imediate Stepes To Take</strong></h2>
       </div>
-      <div class="column">
-          <h2>{{pdata.Title}}: {{pdata.Description | specialPipe}}</h2>
-      </div>
+      <div class="columns">
+        <div class="column">
+            <img class="image" src="../../assets/images/Strong-Password.png">
+            <p class="text1 has-text-white">Think of a new strong password. Usually people use passwords that are easy to crack. Consider using a combonation of letters, numbers and symbols.</p>
+        </div>
+        <div class="column">
+            <img class="image" src="../../assets/images/Change Password.png">
+            <p class="text1 has-text-white">Change your password on any accounts with the affected email as soon as possible! This isnt ideal but can be a quick fix to not lose any sensitive info.</p>
+        </div>
+        <div class="column">
+            <img class="image" src="../../assets/images/password-manager.jpg">
+            <p class="text1 has-text-white">Consider using a password manager such as 1password, LastPass or any other. There are many open source password managers for free.</p>
         </div>
       </div>
+    </div>
+
+  <div *ngFor="let pdata of pwnedData">
+    <div class="bckgrnd has-text-white">
+          <article class="media">
+              <figure class="media-left">
+                <p class="image is-64x64">
+                  <img src="{{pdata.LogoPath}}">
+                </p>
+              </figure>
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    <strong>{{pdata.Title}}</strong> - <small>{{pdata.Domain}}</small>
+                    <br>
+                    {{pdata.Description | specialPipe}}
+                  </p>
+                </div>
+              </div>
+            </article>
+</div>
 </div>
 </div>

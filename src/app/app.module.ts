@@ -4,7 +4,8 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PwnedDataComponent } from './pwned-data/pwned-data.component';
 import { specialPipe} from '../app/services/specialPipe';
-import { PasswordCheckerComponent } from './password-checker/password-checker.component'
+import { PasswordCheckerComponent } from './password-checker/password-checker.component';
+import { AppRoutingModule } from './app-routing.module'
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { PasswordCheckerComponent } from './password-checker/password-checker.co
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

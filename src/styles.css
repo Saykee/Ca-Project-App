@@ -3,17 +3,27 @@
     height: 75px;
 }
 
+.input {
+    width: 50%;
+}
+
 .column {
     text-align: left;
 }
 
 .label { 
-    text-align: left;
+    text-align: center;
 }
 
 .section { 
     text-align: center;
     display: block;
+}
+
+.bckgrnd {
+    background-color: gray;
+    text-align: center;
+    padding: 3rem;
 }
 
 .button {
@@ -23,3 +33,14 @@
     text-align: center;
 }
 
+.image {
+    height: 20vh;
+    width: 20vw;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text1 {
+    padding: 2rem;
+}
