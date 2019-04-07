@@ -16,6 +16,9 @@ export class PwnedDataComponent {
   getPwnedData(emailName: string): boolean {
     this._hipbService.getPwnedData(emailName).subscribe(pwnedData => {
       this.pwnedData = pwnedData;
+      for (let i in pwnedData) {
+        this._hipbService.addPwnedData(pwnedData[i]);
+      }
     },
     error => this.errorMessage = <any>Error);
     return false;
