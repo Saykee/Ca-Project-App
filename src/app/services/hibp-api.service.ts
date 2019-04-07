@@ -7,9 +7,10 @@ import { catchError, tap } from 'rxjs/operators'
   providedIn: 'root'
 })
 export class HibpApiService {
+  [x: string]: any;
 
   private _siteURL = 'https://haveibeenpwned.com/api/v2/breachedaccount/';
-  private _unverifiedBreaches = '?includeUnverified=true'
+  private _unverifiedBreaches = '?includeUnverified=true';
 
   constructor(private _http: HttpClient) {}
 
@@ -26,3 +27,4 @@ export class HibpApiService {
     return Observable.throw(err.message);
   }
 }
+

@@ -8,7 +8,7 @@
   </div>
     </form>
 
-<div *ngIf="pwnedData">
+ <div #div *ngIf="pwnedData">
     <div class="bckgrnd">
       <h1 class="is-size-1 has-text-white">You Have Been Hacked!</h1>
       <div class="section">
@@ -41,7 +41,7 @@
               <div class="media-content">
                 <div class="content">
                   <p>
-                    <strong>{{pdata.Title}}</strong> - <small>{{pdata.Domain}}</small>
+                    <strong>{{pdata.Title}}</strong> - <small>{{pdata.Domain}} - {{pdata.BreachDate}}</small>
                     <br>
                     {{pdata.Description | specialPipe}}
                   </p>
