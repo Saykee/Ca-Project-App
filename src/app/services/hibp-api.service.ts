@@ -7,7 +7,6 @@ import { catchError, tap } from 'rxjs/operators'
   providedIn: 'root'
 })
 export class HibpApiService {
-  [x: string]: any;
 
   private _siteURL = 'https://haveibeenpwned.com/api/v2/breachedaccount/';
   private _unverifiedBreaches = '?includeUnverified=true';
@@ -15,16 +14,15 @@ export class HibpApiService {
   constructor(private _http: HttpClient) {}
 
   getPwnedData(emailName: string): Observable<IHibpresponse> {
-    
     console.log("URL : "+ this._siteURL+emailName+this._unverifiedBreaches);
     return this._http.get<IHibpresponse>(this._siteURL+emailName+this._unverifiedBreaches).pipe(
     tap(data => console.log('All : ' + JSON.stringify(data))),
     catchError(this.handleError));
   }
 
-  private handleError(err: HttpErrorResponse) {
-    console.log('HibpApiService : ' + err.message);
-    return Observable.throw(err.message);
+  handleError(err: string) {
+    console.log('HibpApiServiceError : ' + JSON.stringify(err));
+    return Observable.throw(err);
   }
 }
 

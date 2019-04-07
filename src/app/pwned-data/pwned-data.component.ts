@@ -17,7 +17,7 @@ export class PwnedDataComponent {
     this._hipbService.getPwnedData(emailName).subscribe(pwnedData => {
       this.pwnedData = pwnedData;
     },
-    error => this.errorMessage = <any>error);
+    error => this.errorMessage = <any>Error);
     return false;
   }
 }

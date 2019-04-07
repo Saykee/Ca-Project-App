@@ -1,4 +1,13 @@
-<form class="form">
+
+    <div class="bckgrnd">
+      <h1 class="is-size-2 has-text-white">How It Works</h1>
+          <p class="has-text-white">Step 1 : Enter Your Email</p>
+          <p class="has-text-white">Step 2 : A List of Breaches will be displayed!</p>
+          <p class="text1 has-text-white">If nothing is displayed, Congrats your hack free!</p>
+          <h1 class="is-size-2 has-text-white">It's That Easy!</h1>
+      </div>
+    
+    <form class="form">
       <div class="section">
             <label class="label">Enter Your Email</label>
         <input class="input is-rounded" type="text" name="email-name" placeholder="Enter Your E-Mail Address" #emailName/>
@@ -8,7 +17,7 @@
   </div>
     </form>
 
- <div #div *ngIf="pwnedData">
+ <div *ngIf="pwnedData">
     <div class="bckgrnd">
       <h1 class="is-size-1 has-text-white">You Have Been Hacked!</h1>
       <div class="section">
